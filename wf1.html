@@ -1,0 +1,445 @@
+Q.1  Create an HTML form that contain the Student Registration details and write a JavaScript to validate Student first and last name as it should not contain other than alphabets and age should be between 18 to 50.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+rel="stylesheet" integrity="sha384-
+EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+crossorigin="anonymous">
+</head>
+<script>
+function validateage(){
+age = parseInt(document.getElementById('age').value)
+if(age<18 | age>50)
+{
+window.alert(`please enter age between 18 and 50 you entered 
+${age}`)
+document.getElementById('age').value=null;
+}
+else{
+return true
+}
+}
+function validate_fname(){
+fname = document.getElementById('fname').value
+var letters = /^[A-Za-z]+$/;
+if(fname=='')
+{
+return true
+}
+else if(fname.match(letters))
+{
+return true
+}
+else{
+window.alert('first name should contains letters only.')
+document.getElementById('fname').value=null
+}
+}
+function validate_lname(){
+lname = document.getElementById('lname').value
+var letters = /^[A-Za-z]+$/;
+if(lname=='')
+{
+return true
+}
+else if(lname.match(letters))
+{ 
+return true
+}
+else{
+window.alert('last name should contains letters only.')
+document.getElementById('lname').value=null;
+}
+}
+</script>
+<body>
+<div class="bg-dark mx-auto w-25 my-5">
+<h3 class="bg-info text-center">Student Registration Form</h3>
+<form class="m-5 p-1" name="myForm" method="get">
+<input type="text" id="fname" class="form-control m-1"
+placeholder="enter first name" required oninput="validate_fname()">
+<input type="text" id="mname" class="form-control m-1"
+placeholder="enter middle name">
+<input type="text" id="lname" class="form-control m-1"
+placeholder="enter last name" required oninput="validate_lname()">
+<input type="text" id="email" class="form-control m-1"
+placeholder="enter email">
+<input type="text" id="mobile" class="form-control m-1"
+placeholder="enter mobile number">
+<input type="number" id="age" class="form-control m-1"
+placeholder="enter age" required>
+<a href="https://youtube.com" target="_self"><input type=" button"
+class="btn btn-primary m-1" value="click to submit"
+onclick="validateage()"></a>
+</form>
+</div>
+</body>
+</html>
+o/p - 
+Q 2 Create an HTML form that contain the Employee Registration details and write a JavaScript to validate DOB, Joining Date, and Salary
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+rel="stylesheet" integrity="sha384-
+EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+crossorigin="anonymous">
+</head>
+<script>
+function validate_employee(){
+current_date = new Date().toISOString().slice(0, 10);
+dob = document.getElementById('dob').value
+if(dob > current_date)
+{
+window.alert(`please enter valid birth date \n you entered: 
+${dob}`)
+document.getElementById('dob').value=null;
+}
+joining_date = document.getElementById('joining date').value
+if(joining_date > current_date){
+window.alert(`please enter valid joining date \n you entered: 
+${joining_date}`)
+document.getElementById('joining date').value=null;
+}
+salary = parseFloat(document.getElementById('salary').value)
+if(salary <= 0){
+window.alert(`please enter valid salary \n you entered 
+:${salary}`)
+document.getElementById('salary').value=null;
+}
+}
+</script>
+<body>
+<div class="bg-dark mx-auto w-25 my-5">
+<h3 class="bg-info text-center">Emplyee Details Form</h3>
+<form class="m-5 p-1" name="myForm" method="get">
+<input type="text" id="fname" class="form-control m-1"
+placeholder="enter employee first name" required>
+<input type="text" id="mname" class="form-control m-1"
+placeholder="enter employee middle name">
+<input type="text" id="lname" class="form-control m-1"
+placeholder="enter employee last name" required>
+<input type="text" id="email" class="form-control m-1"
+placeholder="enter email">
+<input type="text" id="mobile" class="form-control m-1"
+placeholder="enter mobile number">
+<input type="number" id="age" class="form-control m-1"
+placeholder="enter age" required>
+<input type="date" id="dob" class="form-control m-1"
+placeholder="enter date of birth" required>
+<input type="date" id="joining date" class="form-control m-1"
+placeholder="enter joining date" required>
+<input type="number" id="salary" class="form-control m-1"
+placeholder="enter employee salary" required>
+<input type=" button" class="btn btn-primary m-1" value="click to 
+submit" onclick="validate_employee()">
+</form>
+</div>
+</body>
+</html>
+o/p - 
+
+
+Q.3  Create an HTML form for Login and write a JavaScript to validate email ID using  Regular
+Expression
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+rel="stylesheet" integrity="sha384-
+EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+crossorigin="anonymous">
+</head>
+<script>
+function validate_user(){
+email = document.getElementById('email').value
+const re = 
+/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;
+:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+if(email.match(re))
+{
+window.alert('success')
+}
+else{
+window.alert(`please enter valid email address \n you entered: 
+${email}`)
+document.getElementById('email').value=null;
+}
+}
+</script>
+<body>
+<div class="bg-dark mx-auto w-25 my-5">
+<h3 class="bg-info text-center">Emplyee Details Form</h3>
+<form class="m-5 p-1" name="myForm" method="get">
+<input type="text" id="email" class="form-control m-1"
+placeholder="enter email">
+<input type="password" id="password" class="form-control m-1"
+placeholder="enter password">
+<input type=" button" class="btn btn-primary m-1" value="click to 
+submit" onclick="validate_user()">
+</form>
+</div>
+</body>
+</html>
+
+o/p - 
+
+4. Create a Simple Web Server using node js to print today’s date on the browser.	
+var http = require("http");
+
+http.createServer(function (request, response) {
+   // Send the HTTP header 
+   // HTTP Status: 200 : OK
+   // Content Type: text/plain
+   response.writeHead(200, {'Content-Type': 'text/plain'});
+   
+   // Send the response body as "Hello World"
+   response.end('Todays Date: \n'+Date());
+}).listen(8081);
+
+// Console will print the message
+console.log('Server running at http://127.0.0.1:8081/');
+
+o/p -  Todays Date: 
+Wed Jan 18 2023 22:39:22 GMT+0530 (India Standard Time)
+
+5. Create a Simple Web Server using node js, and display message on browser ”Welcome to nod.js”.
+var http = require("http");
+
+http.createServer(function (request, response) {
+   // Send the HTTP header 
+   // HTTP Status: 200 : OK
+   // Content Type: text/plain
+   response.writeHead(200, {'Content-Type': 'text/plain'});
+   
+   // Send the response body as "Hello World"
+   response.end('Welcome to nod.js\n');
+}).listen(8081); 
+
+// Console will print the message
+console.log('Server running at http://127.0.0.1:8081/');
+
+o/p- welcome to nod.js
+
+
+6.Create a Node.js file that will convert the output "Hello World!" into upper-case letters.
+var http = require('http');
+var uc = require('upper-case');
+
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(uc.upperCase("Hello World!"));
+    res.end();
+}).listen(8081);
+
+cmd -  npm i upper-case --save
+o/p -  http://localhost:8081
+
+
+7. Create a Node.js file that opens the requested file and returns the content to the client.If anything goes wrong, throw a 404 error.
+var http = require('http');
+var fs = require('fs');
+http.createServer(function (req, res) {
+  fs.readFile('input1.txt', function(err, data) {
+    if (err) {
+      res.writeHead(404, {'Content-Type': 'text/html'});
+      return res.end("404 Not Found");
+    } 
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    return res.end();
+  });
+}).listen(8080);
+
+o/p - same file will be opend.
+
+8. Create a Node.js file that opens the requested file and appends the given content to the file.
+var fs = require('fs');
+
+fs.appendFile('input.txt', 'Hello contentnew!', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+
+o/p - Saved!
+
+9. Using nodejs create a web page  to read two file names from user and append contents of first file into second file.
+var fs = require('fs');
+fs.readFile('first.txt', function(err, data){
+
+fs.appendFile('second.txt', data, function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+});
+
+o/p - 
+10. Create a node.js file that Select all records from the "customers" table, and display the result object on console.
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+    host: "127.0.0.1",
+    user: "root",
+    password: "indira",
+  database: "mydb"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM customers", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
+});
+
+o/p - 
+
+
+11. Create a node.js file that Insert Multiple Records in  "student" table, and display the result object on console.
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+    host: "127.0.0.1",
+    user: "root",
+    password: "indira",
+    database: "college"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "INSERT INTO student (name, class) VALUES ('Dip Shaha', 'MSc II'), ('Geet Kale', 'MSc I')";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log(" record inserted");
+  });
+});
+
+o/p - 
+
+
+12. Create a node.js file that Select all records from the "customers" table, and delete the specified record.  
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+    host: "127.0.0.1",
+    user: "root",
+    password: "indira",
+  database: "mydb"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM customers", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+    var sql = "DELETE FROM customers WHERE address = 'wakad'";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Number of records deleted: " + result.affectedRows);
+  });
+});
+});
+
+o/p  - 
+
+
+13. Write node js script to build Your Own Node.js Module. Use require (‘http’) module is a built-in Node module that invokes the functionality of the HTTP library to create a local server.  Also use the export statement to make functions in your module available externally. Create a new text file to contain the functions in your module called, “modules.js” and add this function to return today’s date and time. 
+Modules.js
+exports.myDateTime = function () {
+  return Date();
+};
+
+DemoModules.js
+var http = require('http');
+var dt = require('./modules');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write("The date and time are currently: " + dt.myDateTime());
+  res.end();
+}).listen(8080);
+
+o/p - 
+
+
+14. Create a js file named main.js for  event-driven application. There should be a main loop that listens for events, and then triggers a callback function when one of those events is detected.
+// Import events module ​
+
+var events= require('events'); 
+
+// Create an eventEmitter object​
+
+ var eventEmitter = new events.EventEmitter(); 
+
+// Create an event handler as follows ​
+
+var connectHandler = function connected() { console.log('connection succesful.'); 
+
+// Fire the data_received event 
+eventEmitter.emit('data_received'); } 
+
+// Bind the connection event with the handler
+ eventEmitter.on('connection', connectHandler); 
+
+// Bind the data_received event with the anonymous function 
+eventEmitter.on('data_received', function() { 
+
+console.log('data received succesfully.'); }); 
+
+// Fire the connection​
+
+ eventEmitter.emit('connection');
+
+ console.log("Program Ended.");
+
+o/p -      connection succesful.
+	data received succesfully.
+	Program Ended.
+
+
+Q. 15 Write node js application that enables the user to download file and save it locally. 
+
+var express = require('express');
+var app = express();
+var PORT = 3000;
+
+app.get('/', function(req, res){
+    res.download('Hello.txt');
+});
+
+app.listen(PORT, function(err){
+    if (err) console.log(err);
+    console.log("Server listening on PORT", PORT);
+});
+
+cmd - npm install express
+o/p - Server listening on PORT 3000
+
+
+
+
+
+
+
+
+
+
+
