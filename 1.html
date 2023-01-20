@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+rel="stylesheet" integrity="sha384-
+EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+crossorigin="anonymous">
+</head>
+<script>
+function validateage(){
+age = parseInt(document.getElementById('age').value)
+if(age<18 | age>50)
+{
+window.alert(`please enter age between 18 and 50 you entered 
+${age}`)
+document.getElementById('age').value=null;
+}
+else{
+return true
+}
+}
+function validate_fname(){
+fname = document.getElementById('fname').value
+var letters = /^[A-Za-z]+$/;
+if(fname=='')
+{
+return true
+}
+else if(fname.match(letters))
+{
+return true
+}
+else{
+window.alert('first name should contains letters only.')
+document.getElementById('fname').value=null
+}
+}
+function validate_lname(){
+lname = document.getElementById('lname').value
+var letters = /^[A-Za-z]+$/;
+if(lname=='')
+{
+return true
+}
+else if(lname.match(letters))
+{ 
+return true
+}
+else{
+window.alert('last name should contains letters only.')
+document.getElementById('lname').value=null;
+}
+}
+</script>
+<body>
+<div class="bg-dark mx-auto w-25 my-5">
+<h3 class="bg-info text-center">Student Registration Form</h3>
+<form class="m-5 p-1" name="myForm" method="get">
+<input type="text" id="fname" class="form-control m-1"
+placeholder="enter first name" required oninput="validate_fname()">
+<input type="text" id="mname" class="form-control m-1"
+placeholder="enter middle name">
+<input type="text" id="lname" class="form-control m-1"
+placeholder="enter last name" required oninput="validate_lname()">
+<input type="text" id="email" class="form-control m-1"
+placeholder="enter email">
+<input type="text" id="mobile" class="form-control m-1"
+placeholder="enter mobile number">
+<input type="number" id="age" class="form-control m-1"
+placeholder="enter age" required>
+<a href="https://youtube.com" target="_self"><input type=" button"
+class="btn btn-primary m-1" value="click to submit"
+onclick="validateage()"></a>
+</form>
+</div>
+</body>
+</html>
